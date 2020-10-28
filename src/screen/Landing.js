@@ -7,8 +7,11 @@ import Subscribe from '../component/Subscribe'
 import OurApp from '../component/OurApp'
 
 const Landing = ({ setScreen }) => {
+    const navToLogin = () => {
+        setScreen('main')
+    }
     return <div className="Landing__container">
-        <Hero />
+        <Hero loginCAT={navToLogin} />
         <BodyText />
         <OurApp />
         <Subscribe />
