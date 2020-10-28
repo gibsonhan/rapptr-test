@@ -4,12 +4,13 @@
     align-items: center;
     justify-content: center; 
 
-    margin-top: 88px;
     margin-bottom: 90px;
 }
 
 .Subscribe__h2{
     color: #2FCBFC;
+    margin-top: 88px;
+    margin-bottom: 45px;
 }
 
 .Subscribe__input-container{
