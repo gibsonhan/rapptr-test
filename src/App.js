@@ -4,7 +4,7 @@ import Landing from './screen/Landing';
 import Main from './screen/Main';
 
 function App() {
-  const [screen, setScreen] = useState('landing')
+  const [screen, setScreen] = useState('main')
 
   const display = {
     'landing': <Landing setScreen={setScreen} />,

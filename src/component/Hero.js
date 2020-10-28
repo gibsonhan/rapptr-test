@@ -1,5 +1,5 @@
 import React from 'react'
-import heroImg from '../assets/hero_img.png'
+import heroImg from '../assets/bg_hero.png'
 import rapttrLogo from '../assets/logo_rapptr.png'
 import './Hero.css'
 

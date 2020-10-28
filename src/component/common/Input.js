@@ -1,10 +1,12 @@
 import React from 'react'
 import './Input.css'
 
-const Input = ({ height, width, name, placeholder, inputRef, type }) => {
+const Input = ({ bgColor, height, width, name, placeholder, inputRef, marginBottom, type }) => {
     const inputStyle = {
+        backgroundColor: bgColor || '#ffffff',
         height: parseInt(height),
         width: parseInt(width),
+        marginBottom: parseInt(marginBottom) || 0,
     }
     const inputName = 'Input__' + name
     return <div className="Input__container">
@@ -15,7 +17,6 @@ const Input = ({ height, width, name, placeholder, inputRef, type }) => {
             type={type}
             placeholder={placeholder}
             style={inputStyle}
-            onChange={console.log('hello')}
         />
     </div>
 }

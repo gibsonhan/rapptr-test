@@ -7,8 +7,6 @@ import Btn from './common/Btn'
 import { subscribe } from '../util/service'
 import validate from '../util/validateEmail'
 
-
-
 const Subscribe = () => {
     const emailRef = useRef(null)
 
@@ -38,7 +36,6 @@ const Subscribe = () => {
                     width="276" />
                 <Btn
                     title="Subscribe"
-                    type="submit"
                     height="49"
                     width="165"
                     bkColor="#2F2E2E"
