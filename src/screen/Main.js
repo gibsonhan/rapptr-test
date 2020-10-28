@@ -14,13 +14,12 @@ const Main = ({ setScreen }) => {
         'signUp': <SignUp />,
         'login': <Login />
     }
-
     const navToLanding = () => {
         setScreen('landing')
     }
     return <div className="Main__container">
         <img className="Main__logo" src={rapttrLogo} alt="rapptr-logo" onClick={navToLanding} />
-        <HeaderSelect state={state} setState={setState} />
+        <SelectForm state={state} setState={setState} />
         <form className="Main__form-container">
             {displayForm[state]}
             <Btn
@@ -35,22 +34,18 @@ const Main = ({ setScreen }) => {
     </div>
 }
 
-const HeaderSelect = ({ state, setState }) => {
-
+const SelectForm = ({ state, setState }) => {
+    const signUpStyle = state === 'signUp' ? selected : notSelected
+    const loginStyle = state === 'login' ? selected : notSelected
     const selected = {
         color: '#ffffff',
         textDecoration: 'underline'
     }
-
     const notSelected = {
         color: '#ffffff',
         opacity: '.6',
         textDecoration: 'none',
     }
-
-    const signUpStyle = state === 'signUp' ? selected : notSelected
-    const loginStyle = state === 'login' ? selected : notSelected
-
     const setStateSignUp = () => {
         setState('signUp')
     }
@@ -59,8 +54,8 @@ const HeaderSelect = ({ state, setState }) => {
     }
     return (
         <div className="Main__select-container">
-            <h3 className="Main__SignUp-h3" style={signUpStyle} onClick={setStateSignUp}>Sign Up</h3>
-            <h3 className="Main__Login-h3" style={loginStyle} onClick={setStateLogin}>Login</h3>
+            <h3 className="Main__select-SignUp-h3" style={signUpStyle} onClick={setStateSignUp}>Sign Up</h3>
+            <h3 className="Main__select-Login-h3" style={loginStyle} onClick={setStateLogin}>Login</h3>
         </div>
     )
 }
@@ -72,6 +67,7 @@ const inputStyle = {
     marginBottom: '12'
 }
 
+// /https://stackoverflow.com/questions/56870188/find-form-input-without-jquery
 const SignUp = () => {
     const signUpInputs = ['username', 'email', 'password']
     return (
