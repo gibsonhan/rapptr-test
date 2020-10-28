@@ -1,6 +1,6 @@
 import './App.css';
-import Landing from './screens/Landing';
-import Main from './screens/Main';
+import Landing from './screen/Landing';
+import Main from './screen/Main';
 
 const screen = {
   'landing' : <Landing />,
