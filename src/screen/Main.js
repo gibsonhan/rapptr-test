@@ -8,9 +8,9 @@ import { findRenderedComponentWithType } from 'react-dom/test-utils'
 
 
 const Main = ({ setScreen }) => {
-    const [formState, setForm] = useState('signUp')
-    const mainBtnText = formState === 'signUp' ? 'Sign Up' : 'Login'
-    const display = {
+    const [state, setState] = useState('signUp')
+    const mainBtnText = state === 'signUp' ? 'Sign Up' : 'Login'
+    const displayForm = {
         'signUp': <SignUp />,
         'login': <Login />
     }
@@ -20,14 +20,14 @@ const Main = ({ setScreen }) => {
     }
     return <div className="Main__container">
         <img className="Main__logo" src={rapttrLogo} alt="rapptr-logo" onClick={navToLanding} />
-        <HeaderSelect formState={formState} setForm={setForm} />
+        <HeaderSelect state={state} setState={setState} />
         <form className="Main__form-container">
-            {display[formState]}
+            {displayForm[state]}
             <Btn
                 title={mainBtnText}
                 height="49"
                 width="360"
-                bkColor="#2F2E2E"
+                bkColor="#2FCBFC"
                 marginTop='20'
                 type="submit"
             />
@@ -35,7 +35,7 @@ const Main = ({ setScreen }) => {
     </div>
 }
 
-const HeaderSelect = ({ formState, setForm }) => {
+const HeaderSelect = ({ state, setState }) => {
 
     const selected = {
         color: '#ffffff',
@@ -48,19 +48,19 @@ const HeaderSelect = ({ formState, setForm }) => {
         textDecoration: 'none',
     }
 
-    const signUpStyle = formState === 'signUp' ? selected : notSelected
-    const loginStyle = formState === 'login' ? selected : notSelected
+    const signUpStyle = state === 'signUp' ? selected : notSelected
+    const loginStyle = state === 'login' ? selected : notSelected
 
-    const setFormSignUp = () => {
-        setForm('signUp')
+    const setStateSignUp = () => {
+        setState('signUp')
     }
-    const setFormLogin = () => {
-        setForm('login')
+    const setStateLogin = () => {
+        setState('login')
     }
     return (
         <div className="Main__select-container">
-            <h3 className="Main__SignUp-h3" style={signUpStyle} onClick={setFormSignUp}>Sign Up</h3>
-            <h3 className="Main__Login-h3" style={loginStyle} onClick={setFormLogin}>Login</h3>
+            <h3 className="Main__SignUp-h3" style={signUpStyle} onClick={setStateSignUp}>Sign Up</h3>
+            <h3 className="Main__Login-h3" style={loginStyle} onClick={setStateLogin}>Login</h3>
         </div>
     )
 }
