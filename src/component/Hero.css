@@ -1,0 +1,30 @@
+.Hero__container{
+    position: relative;
+}
+
+.Hero__main-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 230px;
+}
+
+.Hero__main-logo{
+    align-self: center;
+}
+
+.Hero__login-nav{
+    position: absolute;
+    top: 32px;
+    right: 80px;
+    color: white;
+}
+
+.Hero__main-text{
+    margin-top: 32px;
+    align-self: center;
+    color: white;
+}
