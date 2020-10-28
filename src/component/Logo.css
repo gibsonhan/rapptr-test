@@ -1,0 +1,24 @@
+.Logo__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: inherit;
+}
+
+.Logo__link{
+    text-decoration: none;
+}
+
+.Logo__img{
+    align-self: center;;
+    width: 50%;
+    height: auto;
+    color:white;
+}
+
+.Logo__name{
+    margin-top: 24px;
+    margin-bottom: 0px;
+    color:white;
+}

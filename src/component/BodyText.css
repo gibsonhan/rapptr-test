@@ -1,0 +1,23 @@
+.Body__container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 100%;
+    max-width: 1660px;
+}
+.Body__title{
+    flex:1;
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 160px;
+    color: #2FCBFC;
+}
+
+.Body__text{
+    flex:1;
+    align-items: center;
+    margin-right: 80px;
+
+}

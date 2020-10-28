@@ -1,0 +1,22 @@
+.OurApp__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #2F2E2E;
+    padding-bottom:80px;
+}
+
+.OurApp__title{
+    margin-top:80px;
+    margin-bottom: 64px;
+    color: white;
+}
+
+.OurApp__logo-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}

@@ -1,0 +1,21 @@
+.Subscribe__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+
+    margin-bottom: 90px;
+}
+
+.Subscribe__h2{
+    color: #2FCBFC;
+    margin-top: 88px;
+    margin-bottom: 45px;
+}
+
+.Subscribe__input-container{
+    display: flex;
+    border-style: solid;
+    border-color: #2F2E2E;
+    border-width: 1px;
+}

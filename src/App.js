@@ -1,15 +1,18 @@
+import React, { useState } from 'react'
 import './App.css';
-import Landing from './screens/Landing';
-import Main from './screens/Main';
-
-const screen = {
-  'landing' : <Landing />,
-  'main': <Main />
-}
+import Landing from './screen/Landing';
+import Main from './screen/Main';
 
 function App() {
+  const [screen, setScreen] = useState('landing')
+
+  const display = {
+    'landing': <Landing setScreen={setScreen} />,
+    'main': <Main setScreen={setScreen} />
+  }
+
   return (
-    screen['landing']
+    display[screen]
   );
 }
 
