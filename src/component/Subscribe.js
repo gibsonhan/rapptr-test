@@ -15,11 +15,10 @@ const Subscribe = () => {
         try {
             validate(emailRef.current.value)
             await subscribe(emailRef.current.value)
-            //setMessage('Greate news you have subscribe to our newsletter')           
+            alert('Thank you for subscribing to our Newsletter')
         }
         catch (error) {
-            //setMessage(error)
-            console.log(error)
+            alert('Failed to subscribe to news letter, error:', error)
         }
     }
 

@@ -23,9 +23,11 @@ const Main = ({ setScreen }) => {
             const data = createInputObject(state)
             const request = selectRequest(state)
             const response = await request(data)
+            alert(state, ' Successful')
         }
         catch (error) {
             console.log(error.message)
+            alert('Failed to ', state, '. Please try again')
         }
     }
 
