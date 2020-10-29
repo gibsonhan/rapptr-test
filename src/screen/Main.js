@@ -75,8 +75,7 @@ const SelectForm = ({ state, setState }) => {
 const inputStyle = {
     bgColor: 'rgba(232, 232, 232, 0.30)',
     height: '52',
-    width: '340',
-    marginBottom: '12'
+    width: '360',
 }
 
 // /https://stackoverflow.com/questions/56870188/find-form-input-without-jquery

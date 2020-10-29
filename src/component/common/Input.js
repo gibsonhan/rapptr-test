@@ -1,8 +1,18 @@
 import React, { useEffect } from 'react'
+import Icon from './Icon'
 import './Input.css'
 
-const Input = ({ bgColor, family, height, width, name, placeholder, inputRef, marginBottom, type }) => {
-
+const Input = ({
+    bgColor,
+    family,
+    height,
+    width,
+    name,
+    placeholder,
+    inputRef,
+    marginBottom,
+    type
+}) => {
     //hack: on render load style for subscribe's input 
     useEffect(() => {
         (async () => {
@@ -27,14 +37,17 @@ const Input = ({ bgColor, family, height, width, name, placeholder, inputRef, ma
     }
     const inputName = 'Input__' + name
     return <div className="Input__container">
-        <input
-            ref={inputRef}
-            className="Input__main"
-            id={inputName}
-            type={type}
-            placeholder={placeholder}
-            style={inputStyle}
-        />
+        <div className="Input__main-container">
+            <img className="Input__main-icon" src={Icon[name]} alt={name + '-icon'} />
+            <input
+                ref={inputRef}
+                className="Input__main"
+                id={inputName}
+                type={type}
+                placeholder={placeholder}
+                style={inputStyle}
+            />
+        </div>
     </div>
 }
 

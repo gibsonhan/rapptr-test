@@ -1,3 +1,20 @@
+.Input__main-container{
+  position: relative;
+  margin-bottom: 0px;
+}
+.Input__main {
+    position: relative;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+    -webkit-appearance: none;
+    background:none;
+    border: none;
+    padding: 0px;
+    text-indent: 20px;
+  }
 .Input__main::placeholder {
     color:black;
   }
