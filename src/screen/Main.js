@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import rapttrLogo from '../assets/logo_rapptr.png'
 import './Main.css'
 
 import Btn from '../component/common/Btn'
 import Input from '../component/common/Input'
-import { findRenderedComponentWithType } from 'react-dom/test-utils'
-
+import createInputObject from '../util/createInputObj'
+import selectRequest from '../util/selectMainFormRequest'
 
 const Main = ({ setScreen }) => {
     const [state, setState] = useState('signUp')
@@ -17,10 +17,22 @@ const Main = ({ setScreen }) => {
     const navToLanding = () => {
         setScreen('landing')
     }
+    const handleFormSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            const data = createInputObject(state)
+            const request = selectRequest(state)
+            const response = await request(data)
+        }
+        catch (error) {
+            console.log(error.message)
+        }
+    }
+
     return <div className="Main__container">
         <img className="Main__logo" src={rapttrLogo} alt="rapptr-logo" onClick={navToLanding} />
         <SelectForm state={state} setState={setState} />
-        <form className="Main__form-container">
+        <form className="Main__form-container" onSubmit={handleFormSubmit}>
             {displayForm[state]}
             <Btn
                 title={mainBtnText}
@@ -35,8 +47,6 @@ const Main = ({ setScreen }) => {
 }
 
 const SelectForm = ({ state, setState }) => {
-    const signUpStyle = state === 'signUp' ? selected : notSelected
-    const loginStyle = state === 'login' ? selected : notSelected
     const selected = {
         color: '#ffffff',
         textDecoration: 'underline'
@@ -46,6 +56,8 @@ const SelectForm = ({ state, setState }) => {
         opacity: '.6',
         textDecoration: 'none',
     }
+    const signUpStyle = state === 'signUp' ? selected : notSelected
+    const loginStyle = state === 'login' ? selected : notSelected
     const setStateSignUp = () => {
         setState('signUp')
     }
