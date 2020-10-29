@@ -12,6 +12,7 @@
   }
 
   .Input__main::placeholder {
+    color:white;
   }
   
   .Input__main:focus {

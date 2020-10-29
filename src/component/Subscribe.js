@@ -29,6 +29,7 @@ const Subscribe = () => {
             <div className="Subscribe__input-container">
                 <Input
                     inputRef={emailRef}
+                    family="subscribe"
                     placeholder="Your email"
                     name="email"
                     type="text"

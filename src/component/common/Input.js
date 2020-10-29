@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Input.css'
 
-const Input = ({ bgColor, height, width, name, placeholder, inputRef, marginBottom, type }) => {
+const Input = ({ bgColor, family, height, width, name, placeholder, inputRef, marginBottom, type }) => {
+
+    //hack: on render load style for subscribe's input 
+    useEffect(() => {
+        (async () => {
+            if (family === 'subscribe') {
+                await import('./InputSubscribe.css')
+            }
+        })();
+    }, [])
+
     const inputStyle = {
         backgroundColor: bgColor || '#ffffff',
         height: parseInt(height),
         width: parseInt(width),
         marginBottom: parseInt(marginBottom) || 0,
+
+        /* inline styling of place holder does not work apparently?
+        '&::placeholder': {
+            content: `''`,
+            color: 'white'
+        },
+        */
     }
     const inputName = 'Input__' + name
     return <div className="Input__container">
