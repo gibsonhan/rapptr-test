@@ -15,7 +15,7 @@
 .Hero__background-img{
     width: 100%;
     max-height: 720px;
-    object-fit: contain;
+    object-fit: fill;
 }
 .Hero__main-logo{
     align-self: center;
